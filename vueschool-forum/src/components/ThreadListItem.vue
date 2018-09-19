@@ -9,7 +9,7 @@
       </p>
 
       <p class="text-faded text-xsmall">
-        By <a href="#">{{user.name}}</a>, {{thread.publishedAt}}
+        By <a href="#">{{user.name}}</a>, <app-date :timestamp="thread.publishedAt"/>
       </p>
     </div>    
 
@@ -18,14 +18,14 @@
         {{repliesCount}} replies
       </p>
 
-      <img  class="avatar-medium" src="https://shunjalica.files.wordpress.com/2010/03/4660_1158801606295_1115427718_482453_2395036_n.jpg?w=479" alt=""/>
+      <img  class="avatar-medium" :src="user.avatar" alt=""/>
 
       <div>
         <p class="text-xsmall">
           <a href="profile.html">Bruce wayne</a>
         </p>
 
-        <p class="text-xsmall text-faded">2 hours ago</p>
+        <p class="text-xsmall text-faded"><app-date :timestamp="user.lastVisitAt"/></p>
 
       </div>
 
@@ -38,6 +38,7 @@
 import sourceData from '@/data'
 
 export default {
+
   props: {
     thread: {
       required: true,

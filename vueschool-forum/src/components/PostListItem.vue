@@ -21,7 +21,7 @@
     </div>
 
     <div class="post-date text-fadded">
-      {{post.publishedAt}}
+      <app-date :timestamp="post.publishedAt"/>
     </div>
 
   </div>
@@ -49,7 +49,6 @@ export default {
       return Object.keys(this.user.posts).length
     }
   }
-
 }
 </script>
 
